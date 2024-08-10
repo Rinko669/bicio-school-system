@@ -49,30 +49,7 @@ function showSlider(type){
     }, timeAutoNext)
 }
 
-// for the accordion 
-document.querySelectorAll('.accordion-button').forEach(button => {
-    button.addEventListener('click', () => {
-        const accordionItem = button.parentElement;
 
-        // Close other accordion items
-        document.querySelectorAll('.accordion-item').forEach(item => {
-            if (item !== accordionItem) {
-                item.classList.remove('active');
-                item.querySelector('.accordion-content').style.maxHeight = null;
-            }
-        });
-
-        // Toggle current accordion item
-        accordionItem.classList.toggle('active');
-        const accordionContent = accordionItem.querySelector('.accordion-content');
-        if (accordionItem.classList.contains('active')) {
-            accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
-        } else {
-            accordionContent.style.maxHeight = null;
-        }
-    });
-});
-//end
 
   // JavaScript function to scroll to the top of the page
         function topFunction() {

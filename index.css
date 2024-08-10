@@ -92,13 +92,13 @@ nav {
 span {
     margin-left: 5px;
 }
-
 .navbar-second {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #F5EFBD;
     height: 70px;
+    position: relative;
 }
 
 .navbar-second .logo {
@@ -115,19 +115,16 @@ span {
 
 .logo img {
     height: 50px;
-    /* Adjust as needed */
     width: 50px;
     margin-right: 10px;
-    /* Space between logo and text */
 }
 
 .logo h1 {
     margin: 0;
-    /* Remove default margin from <h1> */
 }
 
 .navbar-second ul {
-    display: flex;
+    display: flex; /* Show the menu items by default */
     justify-content: center;
     flex: 2;
     list-style: none;
@@ -136,8 +133,7 @@ span {
 }
 
 .navbar-second ul li {
-    margin: 0 15px;
-    /* Adjust spacing between items as needed */
+    margin: 0 15px; /* Adjust spacing between items */
 }
 
 .navbar-second a {
@@ -146,25 +142,68 @@ span {
     font-size: 25px;
     font-weight: 400;
     color: #000;
-    /* Set text color as needed */
 }
 
-/* ends for both navbar */
 
+/* Remove underline on hover */
+.navbar-second a:hover {
+    text-decoration: none; /* Ensure underline is removed on hover */
+}
+
+/* Hamburger Button Styles */
+.hamburger {
+    display: none; /* Hide by default */
+    cursor: pointer;
+}
+
+.hamburger i {
+    font-size: 30px;
+    color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-second ul {
+        display: none; /* Hide menu items on mobile by default */
+        flex-direction: column; /* Stack items vertically */
+        width: 100%; /* Full width for dropdown */
+        background-color: #F5EFBD; /* Match background color */
+        position: absolute; /* Position relative to the navbar */
+        top: 70px; /* Position it below the navbar */
+        right: 0;
+        z-index: 1000; /* Ensure dropdown appears above other content */
+        padding: 10px;
+        padding-bottom: 10px;
+    }
+
+    .navbar-second ul.active {
+        display: flex; /* Show the menu when active */
+    }
+
+    .hamburger {
+        display: block; /* Show the hamburger button on mobile */
+    }
+
+    
+/* Remove underline on hover */
+.navbar-second a:hover {
+    text-decoration: none; /* Ensure underline is removed on hover */
+}
+}
+/* ends for both navbar */
 /* Start for Section1 */
 .blurred-photo-school {
     position: relative;
     overflow: hidden;
     background: url('./pictures/school.jpg') no-repeat center center;
     background-size: cover;
-    height: 700px;
-    /* Adjust height as needed */
+    height: auto;
+    min-height: 700px; /* Ensure a minimum height */
     display: flex;
     align-items: center;
     padding: 20px;
-    /* Add padding for better spacing */
     color: #0b0b0b;
-    /* Set text color to white for better readability */
+    flex-wrap: wrap; /* Allow wrapping of content on smaller screens */
 }
 
 .blurred-photo-school::before {
@@ -175,86 +214,107 @@ span {
     width: 100%;
     height: 100%;
     background: rgba(255, 255, 255, 0.2);
-    /* Light white overlay to enhance text readability */
     backdrop-filter: blur(8px);
-    /* Adjust blur radius as needed */
     z-index: 1;
 }
 
 .blurred-photo-school>* {
     position: relative;
     z-index: 2;
+    flex: 1 1 50%; /* Make each content box take up half the width on larger screens */
 }
 
 .content-left {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    /* Sets the font for the content */
     color: black;
-    /* Sets the text color */
     max-width: 800px;
-    /* Limits the width of the content */
     margin: 0 auto;
-    /* Centers the content horizontally */
     padding: 20px;
-    /* Adds padding around the content */
     line-height: 1.6;
-    /* Increases line height for readability */
 }
 
 .content-left h2 {
     font-size: 2em;
-    /* Makes the heading larger */
     color: #000000;
-    /* Sets the color of the heading */
     margin-bottom: 20px;
-    /* Adds space below the heading */
 }
 
 .content-left p {
     font-size: 20px;
-    /* Increases the size of the paragraph text */
     margin-bottom: 20px;
-    /* Adds space below paragraphs */
 }
 
 .content-left p:last-of-type {
     margin-bottom: 0;
-    /* Removes bottom margin from the last paragraph */
+}
+
+.content-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    /* Ensure padding around the image */
+}
+
+.content-right .school-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional: Add some rounding to the image corners */
 }
 
 .image-caption {
     font-family: 'Georgia', serif;
-    /* Sets a serif font for a more elegant look */
     font-size: 1.2em;
-    /* Slightly larger font size */
     color: black;
-    /* A softer gray color for the text */
     text-align: center;
-    /* Centers the text */
     margin-top: 10px;
-    /* Adds space above the caption */
     margin-bottom: 10px;
-    /* Adds space below the caption */
     padding: 10px;
-    /* Adds padding around the text */
     background-color: rgba(255, 255, 255, 0.8);
-    /* Slightly transparent white background */
-    border-radius: 10px 10px 10px 10px;
-    /* Rounds the corners */
+    border-radius: 10px;
 }
 
-/* End for Section1 */
+/* Responsive Design */
+@media (max-width: 768px) {
+    .blurred-photo-school {
+        flex-direction: column; /* Stack content vertically on smaller screens */
+        height: auto; /* Allow height to adjust based on content */
+    }
 
-/* section 2 */
+    .content-left h2 {
+        font-size: 1.5em; /* Adjust heading size */
+    }
+
+    .content-left p {
+        font-size: 18px; /* Adjust paragraph size */
+    }
+
+    .content-right {
+        padding: 0;
+    }
+
+    .content-right .school-image {
+        max-width: 100%; /* Ensure image does not overflow */
+        height: auto;
+    }
+
+    .image-caption {
+        font-size: 1em; /* Adjust caption size */
+        padding: 8px; /* Adjust padding for smaller screens */
+    }
+}
+/* End for Section1 */
+/* Section 2 */
 .new-section {
     display: flex;
     justify-content: space-between;
-    background: linear-gradient(to bottom, #F5EFBD 70%,   transparent 90%);
+    background: linear-gradient(to bottom, #F5EFBD 70%, transparent 90%);
     padding: 60px;
     margin: 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Allow wrapping for responsiveness */
 }
-
 
 .new-section .left-side {
     flex: 1;
@@ -267,9 +327,22 @@ span {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: space-between;
 }
 
-/* Define the RGB animation */
+/* RGB border animation with rgba background */
+.new-section .box {
+    flex: 1 1 calc(33.333% - 20px);
+    background-color: rgba(255, 255, 255, 0.8); /* rgba background */
+    border: 5px solid; /* Border width */
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: rgbBorder 3s linear infinite; /* RGB border animation */
+}
+
+/* RGB animation for the border */
 @keyframes rgbBorder {
     0% { border-color: rgb(255, 0, 0); }
     33% { border-color: rgb(0, 255, 0); }
@@ -277,25 +350,11 @@ span {
     100% { border-color: rgb(255, 0, 0); }
 }
 
-/* Apply the animated border to your boxes */
-.new-section .box {
-    flex: 1 1 calc(33.333% - 20px);
-    background-color: #fff;
-    border: 5px solid; /* Increase border width */
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: rgbBorder 3s linear infinite; /* Faster animation */
-}
-
-/* Hover effect */
 .new-section .box:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Button styling */
 button.learn-more {
     padding: 10px 20px;
     border: 2px solid red;
@@ -308,15 +367,11 @@ button.learn-more {
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-    
 
 button.learn-more:hover {
     background-color: red;
-    /* Red background */
     color: white;
-    /* White text */
 }
-
 
 .new-section h3 {
     font-size: 1.8em;
@@ -349,12 +404,47 @@ button.learn-more:hover {
 
 .reasons-heading {
     font-size: 24px;
-    /* Adjust the size as needed */
     font-weight: bold;
-    /* Optional: makes the text bold */
 }
 
-/* Additional CSS styles can be added here for button styling */
+/* Responsive Design */
+@media (max-width: 768px) {
+    .new-section {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .new-section .left-side {
+        margin-top: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .new-section .right-side {
+        justify-content: center;
+    }
+
+    .new-section .box {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .new-section h3 {
+        font-size: 1.5em;
+    }
+
+    .new-section p {
+        font-size: 16px;
+    }
+
+    button.learn-more {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+/*start */
 .back-to-top {
     position: fixed;
     bottom: 20px;
@@ -369,6 +459,7 @@ button.learn-more:hover {
     /* Ensure it's above other content */
 }
 
+/*start */
 .back-to-top:hover {
     background-color: #0056b3;
 }
@@ -376,13 +467,24 @@ button.learn-more:hover {
 .back-to-top i {
     margin-right: 5px;
 }
-/*end for section 2*/
-
-
+/*end for button back to top*/
 
 /*section 3 */
-/* carousel */
 /* General carousel styling */
+/* Adjusting carousel section height */
+.carousel-section {
+    padding-top: 50px; /* Adds space above the carousel */
+    padding-bottom: 50px; /* Adds space below the carousel */
+}
+
+/* Adjusting the position of the button */
+.carousel .list .item .content .buttons {
+    margin-top: 30px; /* Increase margin-top to create more space between the content and the button */
+    justify-content: center; /* Center the buttons horizontally */
+    display: flex;
+    gap: 10px; /* Add some spacing between buttons if there's more than one */
+}
+
 .carousel {
     height: 100vh;
     margin-top: -50px;
@@ -415,8 +517,8 @@ body {
 .carousel .list .item .content {
     position: absolute;
     top: 20%;
-    width: 1140px;
-    max-width: 50%;
+    width: 80%; /* Adjusted for responsiveness */
+    max-width: 80%; /* Adjusted for responsiveness */
     left: 50%;
     transform: translateX(-50%);
     padding: 20px; /* Add padding for better readability */
@@ -425,12 +527,14 @@ body {
     color: #fff; /* Text color */
     text-shadow: 0 5px 10px #0004;
     border-radius: 20px; /* Optional: add some border-radius */
+    border: 3px solid; /* Adding border for the RGB effect */
+    border-image: linear-gradient(45deg, red, yellow, green, blue, purple, red) 1;
 }
 
 .carousel .list .item .content .author,
 .carousel .list .item .content .title,
 .carousel .list .item .content .des {
-    margin-bottom: 20px; /* Add some space between elements */
+    margin-bottom: 10px; /* Add some space between elements */
 }
 
 .carousel .list .item .content .author {
@@ -466,11 +570,48 @@ body {
 .carousel .list .item .content .buttons button:nth-child(2) {
     background-color: transparent;
     border: 2px solid red;
-        
 }
 
-/* thumbail */
-.thumbnail{
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+    .carousel .list .item .content {
+        width: 90%; /* Adjusted for responsiveness */
+        max-width: 90%; /* Adjusted for responsiveness */
+    }
+    .carousel .list .item .content .title {
+        font-size: 1.3em; /* Smaller font size for smaller screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .carousel .list .item .content {
+        width: 95%; /* Adjusted for responsiveness */
+        max-width: 95%; /* Adjusted for responsiveness */
+        top: 10%;
+    }
+    .carousel .list .item .content .title {
+        font-size: 1.2em; /* Smaller font size for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .carousel .list .item .content {
+        width: 100%; /* Adjusted for responsiveness */
+        max-width: 100%; /* Adjusted for responsiveness */
+        top: 5%;
+        padding: 10px;
+    }
+    .carousel .list .item .content .title {
+        font-size: 1em; /* Smaller font size for smaller screens */
+    }
+    .carousel .list .item .content .buttons {
+        grid-template-columns: repeat(2, 100px);
+        grid-template-rows: 35px;
+    }
+}
+
+/* Thumbnail and arrows responsiveness */
+.thumbnail {
     position: absolute;
     bottom: 50px;
     left: 50%;
@@ -478,49 +619,57 @@ body {
     z-index: 100;
     display: flex;
     gap: 20px;
+    transform: translateX(-50%);
 }
-.thumbnail .item{
+
+.thumbnail .item {
     width: 150px;
     height: 220px;
     flex-shrink: 0;
     position: relative;
 }
-.thumbnail .item img{
+
+.thumbnail .item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
 }
-.thumbnail .item .content{
+
+.thumbnail .item .content {
     color: black;
     position: absolute;
     bottom: 10px;
     left: 10px;
     right: 10px;
 }
-.thumbnail .item .content .title{
+
+.thumbnail .item .content .title {
     font-weight: 500;
     color: white;
 }
-.thumbnail .item .content .description{
+
+.thumbnail .item .content .description {
     font-weight: 500;
     color: white;
 }
-/* arrows */
-.arrows{
+
+.arrows {
     position: absolute;
     top: 80%;
-    right: 52%;
+    right: 50%;
     z-index: 100;
     width: 300px;
     max-width: 30%;
     display: flex;
     gap: 10px;
     align-items: center;
+    transform: translateX(50%);
 }
-.arrows button{
-    width: 40px;
-    height: 40px;
+
+.arrows button {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background-color: #eee4;
     border: none;
@@ -528,171 +677,14 @@ body {
     font-family: monospace;
     font-weight: bold;
     transition: .5s;
+    margin-bottom: 800px;
 }
-.arrows button:hover{
+
+.arrows button:hover {
     background-color: #fff;
     color: #000;
 }
 
-/* animation */
-.carousel .list .item:nth-child(1){
-    z-index: 1;
-}
-
-/* animation text in first item */
-
-.carousel .list .item:nth-child(1) .content .author,
-.carousel .list .item:nth-child(1) .content .title,
-.carousel .list .item:nth-child(1) .content .topic,
-.carousel .list .item:nth-child(1) .content .des,
-.carousel .list .item:nth-child(1) .content .buttons
-{
-    transform: translateY(50px);
-    filter: blur(20px);
-    opacity: 0;
-    animation: showContent .5s 1s linear 1 forwards;
-}
-@keyframes showContent{
-    to{
-        transform: translateY(0px);
-        filter: blur(0px);
-        opacity: 1;
-    }
-}
-.carousel .list .item:nth-child(1) .content .title{
-    animation-delay: 1.2s!important;
-}
-.carousel .list .item:nth-child(1) .content .topic{
-    animation-delay: 1.4s!important;
-}
-.carousel .list .item:nth-child(1) .content .des{
-    animation-delay: 1.6s!important;
-}
-.carousel .list .item:nth-child(1) .content .buttons{
-    animation-delay: 1.8s!important;
-}
-/* create animation when next click */
-.carousel.next .list .item:nth-child(1) img{
-    width: 150px;
-    height: 220px;
-    position: absolute;
-    bottom: 50px;
-    left: 50%;
-    border-radius: 30px;
-    animation: showImage .5s linear 1 forwards;
-}
-@keyframes showImage{
-    to{
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 0;
-    }
-}
-
-.carousel.next .thumbnail .item:nth-last-child(1){
-    overflow: hidden;
-    animation: showThumbnail .5s linear 1 forwards;
-}
-.carousel.prev .list .item img{
-    z-index: 100;
-}
-@keyframes showThumbnail{
-    from{
-        width: 0;
-        opacity: 0;
-    }
-}
-.carousel.next .thumbnail{
-    animation: effectNext .5s linear 1 forwards;
-}
-
-@keyframes effectNext{
-    from{
-        transform: translateX(150px);
-    }
-}
-
-
-.carousel .time{
-    position: absolute;
-    z-index: 1000;
-    width: 0%;
-    height: 3px;
-    background-color: #f1683a;
-    left: 0;
-    top: 0;
-}
-
-.carousel.next .time,
-.carousel.prev .time{
-    animation: runningTime 3s linear 1 forwards;
-}
-@keyframes runningTime{
-    from{ width: 100%}
-    to{width: 0}
-}
-
-
-/* prev click */
-
-.carousel.prev .list .item:nth-child(2){
-    z-index: 2;
-}
-
-.carousel.prev .list .item:nth-child(2) img{
-    animation: outFrame 0.5s linear 1 forwards;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-@keyframes outFrame{
-    to{
-        width: 150px;
-        height: 220px;
-        bottom: 50px;
-        left: 50%;
-        border-radius: 20px;
-    }
-}
-
-.carousel.prev .thumbnail .item:nth-child(1){
-    overflow: hidden;
-    opacity: 0;
-    animation: showThumbnail .5s linear 1 forwards;
-}
-.carousel.next .arrows button,
-.carousel.prev .arrows button{
-    pointer-events: none;
-}
-.carousel.prev .list .item:nth-child(2) .content .author,
-.carousel.prev .list .item:nth-child(2) .content .title,
-.carousel.prev .list .item:nth-child(2) .content .topic,
-.carousel.prev .list .item:nth-child(2) .content .des,
-.carousel.prev .list .item:nth-child(2) .content .buttons
-{
-    animation: contentOut 1.5s linear 1 forwards!important;
-}
-
-@keyframes contentOut{
-    to{
-        transform: translateY(-150px);
-        filter: blur(20px);
-        opacity: 0;
-    }
-}
-@media screen and (max-width: 678px) {
-    .carousel .list .item .content{
-        padding-right: 0;
-    }
-    .carousel .list .item .content .title{
-        font-size: 30px;
-    }
-}
-  .carousel-section {
-    padding-top: 50px; /* Add padding to create space above the carousel */
-}
 
 /* end for section 3 */
 
@@ -744,11 +736,10 @@ body {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
-    background-color: #ffffff;
+    background-color: #19f3f3;
     padding: 0 15px;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-top: 10px;
-    border: 1px solid #ddd;
 }
 
 /* Open state */
@@ -831,6 +822,5 @@ body {
     padding: 10px 0;
     border-top: 1px solid #444;
 }
-
-
 /* end * /
+
