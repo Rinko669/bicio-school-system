@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* scroll bar custom */
+     ::-webkit-scrollbar{
+        width: 15px;
+     }
+     
+    
+     ::-webkit-scrollbar-thumb {
+         background: linear-gradient(#642bff, #ff22e6);
+     }
+
+/* end * /
+
+
+
+/* main index */
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+nav {
+    padding: 0 50px;
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-first {
+    background-color: #1ED7F0;
+    color: black;
+    height: 50px;
+}
+
+.left>div+div {
+    margin-left: 30px;
+}
+
+.right>div {
+    margin-left: 20px;
+}
+
+.left>div:hover,
+.right>div:hover {
+    color: white;
+    transition: all 0.5s;
+}
+
+span {
+    margin-left: 5px;
+}
+.navbar-second {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F5EFBD;
+    height: 70px;
+    position: relative;
+}
+
+.navbar-second .logo {
+    flex: 1;
+    text-transform: uppercase;
+    font-size: 24px;
+    color: #000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    margin: 0;
+}
+
+.navbar-second ul {
+    display: flex; /* Show the menu items by default */
+    justify-content: center;
+    flex: 2;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-second ul li {
+    margin: 0 15px; /* Adjust spacing between items */
+}
+
+.navbar-second a {
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 25px;
+    font-weight: 400;
+    color: #000;
+}
+
+
+/* Remove underline on hover */
+.navbar-second a:hover {
+    text-decoration: none; /* Ensure underline is removed on hover */
+}
+
+/* Hamburger Button Styles */
+.hamburger {
+    display: none; /* Hide by default */
+    cursor: pointer;
+}
+
+.hamburger i {
+    font-size: 30px;
+    color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-second ul {
+        display: none; /* Hide menu items on mobile by default */
+        flex-direction: column; /* Stack items vertically */
+        width: 100%; /* Full width for dropdown */
+        background-color: #F5EFBD; /* Match background color */
+        position: absolute; /* Position relative to the navbar */
+        top: 70px; /* Position it below the navbar */
+        right: 0;
+        z-index: 1000; /* Ensure dropdown appears above other content */
+        padding: 10px;
+        padding-bottom: 10px;
+    }
+
+    .navbar-second ul.active {
+        display: flex; /* Show the menu when active */
+    }
+
+    .hamburger {
+        display: block; /* Show the hamburger button on mobile */
+    }
+
+    
+/* Remove underline on hover */
+.navbar-second a:hover {
+    text-decoration: none; /* Ensure underline is removed on hover */
+}
+}
+/* ends for both navbar */
+
+/*start */
+
+  .hotspring-section {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+  .slideshow-container {
+    position: relative;
+    max-width: 100%;
+    height: 400px; /* Fixed height for the container */
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #000; /* Ensures a black background while the image loads */
+}
+
+        .mySlides {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            animation: fadeEffect 1s;
+        }
+             .mySlides img {
+    width: 100%;
+    height: auto; /* Maintain the image aspect ratio */
+    max-height: 100%; /* Ensures the image doesn't exceed the container height */
+    display: block;
+    margin: auto;
+}
+
+        @keyframes fadeEffect {
+            from { opacity: 0 }
+            to { opacity: 1 }
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #717171;
+        }
+
+        .info-boxes {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .info-box {
+            background-color: #55d4e5;
+            border-radius: 15px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+        }
+
+        .info-box .icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .info-box p {
+            margin: 10px 0;
+        }
+
+        /* Title styling */
+        .hotspring-title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }

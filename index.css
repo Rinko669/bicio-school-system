@@ -191,6 +191,8 @@ span {
 }
 }
 /* ends for both navbar */
+
+
 /* Start for Section1 */
 .blurred-photo-school {
     position: relative;
@@ -517,8 +519,8 @@ body {
 .carousel .list .item .content {
     position: absolute;
     top: 20%;
-    width: 80%; /* Adjusted for responsiveness */
-    max-width: 80%; /* Adjusted for responsiveness */
+    width: 70%; /* Adjusted for responsiveness */
+    max-width: 70%; /* Adjusted for responsiveness */
     left: 50%;
     transform: translateX(-50%);
     padding: 20px; /* Add padding for better readability */
@@ -526,7 +528,6 @@ body {
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     color: #fff; /* Text color */
     text-shadow: 0 5px 10px #0004;
-    border-radius: 20px; /* Optional: add some border-radius */
     border: 3px solid; /* Adding border for the RGB effect */
     border-image: linear-gradient(45deg, red, yellow, green, blue, purple, red) 1;
 }
@@ -656,7 +657,7 @@ body {
 
 .arrows {
     position: absolute;
-    top: 80%;
+    bottom: 20%;
     right: 50%;
     z-index: 100;
     width: 300px;
@@ -664,7 +665,7 @@ body {
     display: flex;
     gap: 10px;
     align-items: center;
-    transform: translateX(50%);
+    transform: translateX(50%);;
 }
 
 .arrows button {
@@ -684,8 +685,6 @@ body {
     background-color: #fff;
     color: #000;
 }
-
-
 /* end for section 3 */
 
 /* section 4 */

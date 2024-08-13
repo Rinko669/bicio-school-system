@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOTSPRING INFO</title>
+</head>
+
+<!--LINKS-->
+<link rel="shortcut icon" type="image/jpg" href="./pictures/school_logo.png" />
+<link rel="stylesheet" href="hotspring.css">
+<link href="https://unicons.iconscout.com/release/v3.0.6/css/line.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<!--end-->
+
+<!--scripts-->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!--end-->
+
+<body>
+
+    <!-- Start of first navbar -->
+    <nav class="navbar-first flex">
+        <div class="left flex">
+            <div class="email">
+                <i class="fas fa-envelope"></i>
+                <span>bicio@gmail.com</span>
+            </div>
+            <div class="contact">
+                <i class="fas fa-phone"></i>
+                <span>093435467</span>
+            </div>
+        </div>
+
+        <div class="right flex">
+            <div class="facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+                <span>Facebook</span>
+            </div>
+            <div class="google">
+                <i class="fa-brands fa-google"></i>
+                <span>Google</span>
+            </div>
+        </div>
+    </nav>
+    <!-- Ends -->
+    <!-- Second Navbar -->
+    <nav class="navbar-second flex">
+        <div class="logo">
+            <img src="./pictures/school_logo.png" alt="BICIO Logo">
+            <h1>BICIO</h1>
+        </div>
+
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <ul class="flex navbar-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- Ends -->
+
+
+    <!-- Start Hotspring Section -->
+    <div class="hotspring-section">
+        <!-- Title -->
+        <div class="hotspring-title">HOTSPRING</div>
+
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="./pictures/onsen.jpg" alt="Hotspring Image 1">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="./pictures/onsen.jpg" alt="Hotspring Image 2">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="./pictures/onsen.jpg" alt="Hotspring Image 3">
+            </div>
+
+            <!-- Slideshow indicators -->
+            <div style="text-align:center; margin-top: 10px;">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+        <!-- Information boxes -->
+        <div class="info-boxes">
+            <div class="info-box">
+                <div class="icon"><i class="clock-icon"></i></div>
+                <p>7:00 P.M - 11:00 P.M</p>
+                <p>MON - FRI<br>SAT - SUN (OFF - LIMITS)</p>
+            </div>
+            <div class="info-box">
+                <div class="icon"><i class="separate-icon"></i></div>
+                <p>Separate areas for men and women</p>
+                <p>40°C - 42°C (104°F - 107.6°F)</p>
+            </div>
+            <div class="info-box">
+                <div class="icon"><i class="mineral-icon"></i></div>
+                <p>Mineral-rich, perfect for skin care and relaxation</p>
+                <p>Yukata or Towels provided for all guests; swimwear is not allowed in the hot spring</p>
+            </div>
+        </div>
+    </div>
+    <!-- End Hotspring Section -->
+
+
+    <script>
+
+       document.addEventListener('DOMContentLoaded', function () {
+            const hamburger = document.querySelector('.hamburger');
+            const menu = document.querySelector('.navbar-menu');
+
+            if (hamburger && menu) {
+                hamburger.addEventListener('click', function () {
+                    menu.classList.toggle('active');
+                });
+            }
+        });
+
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+    </script>
+    <!-- End Scripts -->
+</body>
+
+</html>
