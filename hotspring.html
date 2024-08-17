@@ -60,97 +60,229 @@
         </div>
 
         <ul class="flex navbar-menu">
-            <li><a href="#">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
     <!-- Ends -->
 
-
-    <!-- Start Hotspring Section -->
-    <div class="hotspring-section">
-        <!-- Title -->
-        <div class="hotspring-title">HOTSPRING</div>
-
-        <!-- Slideshow container -->
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="./pictures/onsen.jpg" alt="Hotspring Image 1">
+    <section class="hotspring">
+        <!-- Start Hotspring Section -->
+        <div class="hotspring-section">
+            <!-- Title -->
+            <strong> HOTSPRING</strong>
+            <!--image slider start-->
+            <div class="slider">
+                <div class="slides">
+                    <!--radio buttons start-->
+                    <input type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
+                    <!--radio buttons end-->
+                    <!--slide images start-->
+                    <div class="slide first">
+                        <img src="./pictures/onsen.jpg">
+                    </div>
+                    <div class="slide">
+                        <img src="./pictures/hot.jpg">
+                    </div>
+                    <div class="slide">
+                        <img src="./pictures/onsen.jpg">
+                    </div>
+                    <div class="slide">
+                        <img src="./pictures/onsen.jpg">
+                    </div>
+                    <!--slide images end-->
+                    <!--automatic navigation start-->
+                    <div class="navigation-auto">
+                        <div class="auto-btn1"></div>
+                        <div class="auto-btn2"></div>
+                        <div class="auto-btn3"></div>
+                        <div class="auto-btn4"></div>
+                    </div>
+                    <!--automatic navigation end-->
+                </div>
+                <!--manual navigation start-->
+                <div class="navigation-manual">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                    <label for="radio4" class="manual-btn"></label>
+                </div>
+                <!--manual navigation end-->
             </div>
-
-            <div class="mySlides fade">
-                <img src="./pictures/onsen.jpg" alt="Hotspring Image 2">
-            </div>
-
-            <div class="mySlides fade">
-                <img src="./pictures/onsen.jpg" alt="Hotspring Image 3">
-            </div>
-
-            <!-- Slideshow indicators -->
-            <div style="text-align:center; margin-top: 10px;">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-        </div>
-
-        <!-- Information boxes -->
-        <div class="info-boxes">
-            <div class="info-box">
-                <div class="icon"><i class="clock-icon"></i></div>
+            <!--image slider end-->
+    </section>
+    <!-- Information boxes -->
+    <div class="info-boxes">
+        <div class="info-box-first">
+            <div class="icon-text">
+                <img src="./pictures/clock.png" class="icon">
                 <p>7:00 P.M - 11:00 P.M</p>
+            </div>
+            <div class="icon-text">
+                <img src="./pictures/calendar.png" class="icon">
                 <p>MON - FRI<br>SAT - SUN (OFF - LIMITS)</p>
             </div>
-            <div class="info-box">
-                <div class="icon"><i class="separate-icon"></i></div>
+        </div>
+        <div class="info-box-second">
+            <div class="icon-text">
+                <img src="./pictures/gender_symbol.jpg" class="icon">
                 <p>Separate areas for men and women</p>
+            </div>
+            <div class="icon-text">
+                <img src="./pictures/thermo.png" class="icon">
                 <p>40°C - 42°C (104°F - 107.6°F)</p>
             </div>
-            <div class="info-box">
-                <div class="icon"><i class="mineral-icon"></i></div>
+        </div>
+        <div class="info-box">
+            <div class="icon-text">
+                <img src="./pictures/hotspring.png" class="icon">
                 <p>Mineral-rich, perfect for skin care and relaxation</p>
+            </div>
+            <div class="icon-text">
+                <img src="./pictures/towel.jpg" class="icon">
                 <p>Yukata or Towels provided for all guests; swimwear is not allowed in the hot spring</p>
             </div>
         </div>
     </div>
     <!-- End Hotspring Section -->
 
+    <section class="section-three">
+        <h2 class="animated-title">Hot Spring at Our School</h2>
+        <p class="hotspring-description">
+            Our school's hot spring offers a serene and rejuvenating experience, blending traditional relaxation
+            techniques with modern amenities. Separated by gender, the hot spring waters are rich in minerals, perfect
+            for skin care and stress relief. Guests can enjoy a calming atmosphere surrounded by nature, ideal for
+            unwinding after a long day.
+        </p>
+         <div class="stats-container">
+        <div class="stat-box">
+            <div class="stat-number" data-count="1200">0</div>
+            <div class="stat-label">Visitors</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number" data-count="800">0</div>
+            <div class="stat-label">Students</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number" data-count="50">0</div>
+            <div class="stat-label">Faculties</div>
+        </div>
+    </div>
+    </section>
+   
+     <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="topFunction()">
+        <i class="uil uil-angle-up"></i>
+    </button>
+    <!--end-->
+
+
+    <!-- footer start-->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About BICIO</h3>
+                <p>BICIO is committed to providing top-tier education in computer science and beyond. Join us and
+                    discover the future.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Admissions</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>Email: info@bicio.edu</p>
+                <p>Phone: +1-234-567-890</p>
+                <p>Address: 1234 BICIO Ave, Tech City</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 BICIO. All rights reserved.
+        </div>
+    </footer>
 
     <script>
-
-       document.addEventListener('DOMContentLoaded', function () {
+        // Wait for the DOM to load
+        document.addEventListener('DOMContentLoaded', function () {
             const hamburger = document.querySelector('.hamburger');
             const menu = document.querySelector('.navbar-menu');
 
+            // Toggle the menu when hamburger is clicked
             if (hamburger && menu) {
                 hamburger.addEventListener('click', function () {
                     menu.classList.toggle('active');
                 });
             }
+
+            // Start the slideshow
+            var counter = 1;
+            setInterval(function () {
+                document.getElementById('radio' + counter).checked = true;
+                counter++;
+                if (counter > 4) {
+                    counter = 1;
+                }
+            }, 5000); // Adjust the time (in milliseconds) as needed (5000ms = 5 seconds)
+        }); // Closing the DOMContentLoaded function properly
+
+        // JavaScript to add scroll-triggered animation
+        document.addEventListener('scroll', function () {
+            const title = document.querySelector('.animated-title');
+            const titlePosition = title.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3; // Adjust this value to trigger sooner/later
+
+            if (titlePosition < screenPosition) {
+                title.classList.add('scroll-animation');
+            }
+        });
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.stat-number').forEach(el => {
+        const endValue = parseInt(el.getAttribute('data-count'));
+        let currentValue = 0;
+        const increment = endValue / 100;
+
+        const updateNumber = () => {
+            if (currentValue < endValue) {
+                currentValue += increment;
+                el.textContent = Math.round(currentValue);
+                setTimeout(updateNumber, 30);
+            } else {
+                el.textContent = endValue;
+            }
+        };
+
+        updateNumber();
+    });
+});
+
+ // JavaScript function to scroll to the top of the page
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+
+        window.addEventListener('load', function () {
+            // Delay in milliseconds
+            const delay = 3000; // 3 second
+
+            setTimeout(function () {
+                const preloader = document.querySelector('.preloader');
+                preloader.style.display = 'none';
+            }, delay);
         });
 
-        let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-            setTimeout(showSlides, 5000); // Change image every 5 seconds
-        }
     </script>
-    <!-- End Scripts -->
+
 </body>
 
 </html>
